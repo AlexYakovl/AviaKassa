@@ -2,6 +2,35 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form45 {
+            width: 300px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        input[type="file"] {
+            margin: 5px 0;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -42,16 +71,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+echo "Nomer bilet: $number <br> Imya kupuvshego: $name <br> Email: $email <br> Tip bileta: $ticketType";
+if (!empty($uploadedFile)) {
+    echo "<br><img src='$uploadedFile' alt='Foto bileta' width='200'><br>";
+}
+
 $number = isset($_COOKIE["user_number"]) ? $_COOKIE["user_number"] : "";
 $name = isset($_COOKIE["user_name"]) ? $_COOKIE["user_name"] : "";
 $email = isset($_COOKIE["user_email"]) ? $_COOKIE["user_email"] : "";
 $ticketType = isset($_COOKIE["user_ticket_type"]) ? $_COOKIE["user_ticket_type"] : "";
 $uploadedFile = isset($_COOKIE["user_photo"]) ? $_COOKIE["user_photo"] : "";
 
-echo "Nomernoy bilet: $number <br> Imya kupuvshego: $name <br> Email: $email <br> Tip bileta: $ticketType";
-if (!empty($uploadedFile)) {
-    echo "<br><img src='$uploadedFile' alt='Foto bileta' width='200'><br>";
-}
 ?>
 <h3>Покупка билетов</h3>
 <form method="POST" class="form45" enctype="multipart/form-data">
@@ -64,13 +94,11 @@ if (!empty($uploadedFile)) {
         <option value="VIP" <?php echo ($ticketType == 'VIP') ? 'selected' : ''; ?>>VIP</option>
         <option value="Детский" <?php echo ($ticketType == 'Детский') ? 'selected' : ''; ?>>Детский</option>
     </select><br>
-   Загрузить фото билета: <input type="file" name="photo" accept="image/*"><br>
+    Загрузить фото билета: <input type="file" name="photo" accept="image/*"><br>
     <input type="submit" value="Купить билет">
 </form>
 <br><br>
-<a href="main.php">
-    Вернуться
-</a>
+<a href="main.php">Вернуться</a>
 <br><br>
 </body>
 </html>
