@@ -76,11 +76,11 @@ if (!empty($uploadedFile)) {
     echo "<br><img src='$uploadedFile' alt='Foto bileta' width='200'><br>";
 }
 
-$number = isset($_COOKIE["user_number"]) ? $_COOKIE["user_number"] : "";
-$name = isset($_COOKIE["user_name"]) ? $_COOKIE["user_name"] : "";
-$email = isset($_COOKIE["user_email"]) ? $_COOKIE["user_email"] : "";
-$ticketType = isset($_COOKIE["user_ticket_type"]) ? $_COOKIE["user_ticket_type"] : "";
-$uploadedFile = isset($_COOKIE["user_photo"]) ? $_COOKIE["user_photo"] : "";
+$number = isset($_POST['number']) ? $_POST['number'] : (isset($_COOKIE["user_number"]) ? $_COOKIE["user_number"] : "");
+$name = isset($_POST['name']) ? $_POST['name'] : (isset($_COOKIE["user_name"]) ? $_COOKIE["user_name"] : "");
+$email = isset($_POST['email']) ? $_POST['email'] : (isset($_COOKIE["user_email"]) ? $_COOKIE["user_email"] : "");
+$ticketType = isset($_POST['ticketType']) ? $_POST['ticketType'] : (isset($_COOKIE["user_ticket_type"]) ? $_COOKIE["user_ticket_type"] : "");
+$uploadedFile = isset($_POST['ticketType']) ? $_POST['ticketType'] : (isset($_COOKIE["user_photo"]) ? $_COOKIE["user_photo"] : "");
 
 ?>
 <h3>Покупка билетов</h3>
