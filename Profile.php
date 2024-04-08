@@ -77,7 +77,7 @@ if (!isset($_SESSION['username'])) {
 
 <h2>Информация о пользователе</h2>
 <p>Имя пользователя: <?php echo $_SESSION['username']; ?></p>
-<!-- ... Другая информация о пользователе ... -->
+<p>Email пользователя: <?php echo $_SESSION['pochta']; ?></p>
 
 <form action="auth.php" method="get">
     <input type="hidden" name="logout" value="1" />

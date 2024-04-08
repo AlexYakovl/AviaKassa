@@ -17,6 +17,7 @@ if (isset($_GET['register'])) {
     $user_id = $user_id_query->fetch();
     $creds_query = $db->query("INSERT INTO \"Schema_LW\".\"Аккаунты\" VALUES (".($user_id['max']+1).", '".$_POST['login']."', '".$_POST['email']."', '".$_POST['password']."', '".$_POST['phone']."', '".$bin_img."')");
     $_SESSION['username'] = $_POST['login'];
+    $_SESSION['pochta'] = $_POST['email'];
     $_SESSION['user_id'] = $user_id['max'];
     header("Location: /main.php");
     die();
