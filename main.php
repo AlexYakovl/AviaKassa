@@ -16,6 +16,7 @@ session_start();?>
       padding: 0;
       margin: 0;
       background-color: #eaeaea;
+      overflow: hidden;
     }
 
     .card{
@@ -25,21 +26,24 @@ session_start();?>
       margin-top: 20px;
       font-family: 'Comic Sans MS', cursive;
       width: 350px;
+      border-style: solid;
+      border-width: 3px;
+      border-color: rgb(16, 41, 92);
     }
 
     .card-title{
       font-size: 18px;
       font-weight: bold;
       font-family: 'Comic Sans MS', cursive;
+      
     }
 
 
     .container{
       padding: 10px;
-      background-image: url("pic/dostav.webp");
+      background-image: url("pic/fon.jpg");
       background-repeat: no-repeat;
       height: 1343px;
-      background-size: cover;
     }
 
     .texthold{
@@ -48,7 +52,6 @@ session_start();?>
         justify-content: center;
         gap: 60px;
         flex-wrap: wrap;
-
     }
 
     .topmid > * {
@@ -61,15 +64,23 @@ session_start();?>
         justify-content: center;
         flex-direction: column;
         gap: 10px;
-        background-color: rgb(0,0,0);
+        background-color: rgb(255, 255, 255);
         padding: 15px;
+        border-style: solid;
+        border-width: 3px;
+        border-color: rgb(16, 41, 92);
     }
     .toptext{
-        color: darkred;
-        font-family: 'Sigmar', cursive;
+        color: rgb(16, 41, 92);
+        font-family: 'Comic Sans MS';
+        font-size: 32px;
     }
     .toptext2{
-        color: darkred;
+        color: rgb(16, 41, 92);
+        font-family: 'Comic Sans MS';
+        font-size: 24Px;
+    }
+    .toptext3{
         font-family: 'Comic Sans MS', cursive;
     }
 
@@ -82,11 +93,11 @@ session_start();?>
 <body>
 <div class="topmid" >
   <h1 class="toptext">Air ticket office << Five nights at freddy's >></h1>
-  <p class="toptext" > The best ticket office, because others without Freddy</p>
+  <p class="toptext2" > The best ticket office, because others without Freddy</p>
     <?php if (!isset($_SESSION['username'])): ?>
-        <a href="login.php" class="toptext" > LOGIN </a>
+        <a href="login.php" class="toptext3" > LOGIN </a>
     <?php else: ?>
-        <a href="Profile.php" class="toptext2" > <?php echo $_SESSION['username']; ?> Личный кабинет</a>
+        <a href="Profile.php" class="toptext3" > <?php echo $_SESSION['username']; ?> Личный кабинет</a>
             <?php endif; ?>
 </div>
 <div class="container">

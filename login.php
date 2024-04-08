@@ -33,7 +33,7 @@ unset($_SESSION['message']);
     }
     input[type="submit"] {
         width: 100%;
-        background-color: darkred;
+        background-color: #007bff;
         color: white;
         padding: 12px 20px;
         margin-top: 10px;
@@ -43,10 +43,10 @@ unset($_SESSION['message']);
         font-size: 16px;
     }
     input[type="submit"]:hover {
-        background-color: #600002;
+        background-color: #0056b3;
     }
     button {
-        background-color: #008CBA;
+        background-color: #007bff;
         border: none;
         color: white;
         padding: 12px 20px;
@@ -55,7 +55,7 @@ unset($_SESSION['message']);
         font-size: 16px;
     }
     button:hover {
-        background-color: #006c84;
+        background-color: #0056b3;
     }
     a {
         color: whitesmoke;
@@ -65,9 +65,15 @@ unset($_SESSION['message']);
     a:hover {
         text-decoration: underline;
     }
+    .text{
+        font-family: 'Comic Sans MS', cursive;
+        font-size: 24px;
+    }
+
 </style>
 
 <div class="auth-form">
+    <h class="text"> Вход в аккаунт </h><br>
     <form action="auth.php" method="POST">
         <input type="text" name="login" required placeholder="Логин">
         <input type="password" name="password" required placeholder="Пароль">

@@ -17,7 +17,7 @@ if (!isset($_SESSION['username'])) {
     }
 
     h1, h2 {
-        color: darkred;
+        color: rgb(16, 41, 92);
     }
 
     p {
@@ -31,7 +31,7 @@ if (!isset($_SESSION['username'])) {
     }
 
     input[type=submit] {
-        background-color: darkred;
+        background-color: #007bff;
         border: none;
         color: #fff;
         font-size: 16px;
@@ -44,10 +44,10 @@ if (!isset($_SESSION['username'])) {
     }
 
     input[type=submit]:hover {
-        background-color: darkred;
+        background-color: #0056b3;
     }
     button {
-        background-color: darkred;
+        background-color: #007bff;
         border: none;
         color: #fff;
         font-size: 16px;
@@ -59,7 +59,7 @@ if (!isset($_SESSION['username'])) {
         cursor: pointer;
     }
     button:hover {
-        background-color: darkred;
+        background-color: #0056b3;
     }
     a {
         color: white;
