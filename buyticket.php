@@ -8,14 +8,16 @@
             margin: 20px;
         }
         .form45 {
-            width: 300px;
+            width: 350px;
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 30px;
+            text-align: center; /* Выравнивание элементов формы влево */
+            
         }
         input[type="text"],
         input[type="email"],
         select {
-            width: 100%;
+            width: 85%;
             padding: 5px;
             margin: 5px 0;
         }
@@ -29,6 +31,16 @@
             color: white;
             border: none;
             cursor: pointer;
+        }
+        .outer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+        }
+
+        .container {
+            text-align: center; /* Выравнивание текста по центру */
         }
     </style>
 </head>
@@ -78,22 +90,25 @@ $ticketType = isset($_POST['ticketType']) ? $_POST['ticketType'] : (isset($_COOK
 $uploadedFile = isset($_POST['ticketType']) ? $_POST['ticketType'] : (isset($_COOKIE["user_photo"]) ? $_COOKIE["user_photo"] : "");
 
 ?>
-<h3>Покупка билетов</h3>
-<form method="POST" class="form45" enctype="multipart/form-data">
-    Номер билета: <input type="text" name="number" required value="<?php echo $number; ?>"/><br>
-    Имя покупателя: <input type="text" name="name" required value="<?php echo $name; ?>" /><br>
-    Email: <input type="email" name="email" required value="<?php echo $email; ?>" /><br>
-    Тип билета: 
-    <select name="ticketType" required>
-        <option value="Обычный" <?php echo ($ticketType == 'Обычный') ? 'selected' : ''; ?>>Обычный</option>
-        <option value="VIP" <?php echo ($ticketType == 'VIP') ? 'selected' : ''; ?>>VIP</option>
-        <option value="Детский" <?php echo ($ticketType == 'Детский') ? 'selected' : ''; ?>>Детский</option>
-    </select><br>
-    Загрузить фото билета: <input type="file" name="photo" accept="image/*"><br>
-    <input type="submit" value="Купить билет">
-</form>
-<br><br>
-<a href="main.php">Вернуться</a>
-<br><br>
+ <div class="outer-container">
+        <div class="container">
+            <h3>Покупка билетов</h3>
+            <form method="POST" class="form45" enctype="multipart/form-data">
+                Номер билета: <input type="text" name="number" required value="<?php echo $number; ?>"/><br>
+                Имя покупателя: <input type="text" name="name" required value="<?php echo $name; ?>" /><br>
+                Email: <input type="email" name="email" required value="<?php echo $email; ?>" /><br>
+                Тип билета: 
+                <select name="ticketType" required>
+                    <option value="Обычный" <?php echo ($ticketType == 'Обычный') ? 'selected' : ''; ?>>Обычный</option>
+                    <option value="VIP" <?php echo ($ticketType == 'VIP') ? 'selected' : ''; ?>>VIP</option>
+                    <option value="Детский" <?php echo ($ticketType == 'Детский') ? 'selected' : ''; ?>>Детский</option>
+                </select><br>
+                Загрузить фото билета: <input type="file" name="photo" accept="image/*"><br>
+                <input type="submit" value="Купить билет">
+            </form>
+            <br><br>
+            <a href="main.php?page=page1">Вернуться</a>
+        </div>
+    </div>
 </body>
 </html>

@@ -43,7 +43,6 @@ session_start();?>
       background-image: url("pic/fon.jpg");
       background-repeat: no-repeat;
       height: 1110px;
-      text-align: center;
     }
 
     .texthold{
@@ -83,14 +82,7 @@ session_start();?>
     .toptext3{
         font-family: 'Comic Sans MS', cursive;
     }
-    .link{
-        color: rgb(16, 41, 92);
-        font-family: 'Comic Sans MS';
-        font-size: 24Px;
-        text-align:  center;
-        list-style-type: none;
-        padding: 0;
-    }
+
   </style>
 
 
@@ -98,37 +90,30 @@ session_start();?>
   <title>Авиакасса "Five nights at freddy's" </title>
 </head>
 <body>
-<div class="topmid" >
-  <h1 class="toptext">Air ticket office << Five nights at freddy's >></h1>
-  <p class="toptext2" > The best ticket office, because others without Freddy</p>
-    <?php if (!isset($_SESSION['username'])): ?>
-        <a href="login.php" class="toptext3" > LOGIN </a>
-    <?php else: ?>
-        <a href="Profile.php" class="toptext3" > <?php echo $_SESSION['username']; ?> Личный кабинет</a>
-            <?php endif; ?>
-</div>
-<div class="container">
-<?php
-        // Проверяем, был ли передан GET-параметр "page"
-        if(isset($_GET['page'])) {
-            // Если передан, отображаем только содержимое выбранной страницы
-            $page = $_GET['page'];
-            if($page == 'page1') {
-                include 'info.php';
-            } elseif($page == 'page2') {
-                include 'garant.php';
-            } else {
-                echo "Страница не найдена.";
-            }
-        } else {
-            // Если GET-параметр не передан, отображаем верхние ссылки
-    ?>
-            <ul class="link" >
-                <li><a href="main.php?page=page1" >Общая информация</a></li>
-                <li><a href="main.php?page=page2" >Гарантии</a></li>
-            </ul>
-    <?php } ?>
+
+
+  <div class="texthold">
+        <div class="card">
+          <div class="card-title">
+            Купить билеты.
+          </div>
+          <div class="card-body">
+            Перейдя по <a href="buyticket.php">ссылке</a>, вы можете приобрести купить билеты на нужный вам рейс
+          </div>
+        </div>
+
+      <div class="card">
+        <div class="card-title">
+         О нашей компании.
+       </div>
+        <div class="card-body">
+        Наша компания работает с 1983 года. При сотрудничевстве с «Freddy Fazbear's Pizza». Наша компания имеет большую знаменитость среди детей. Ведь они среди нас.
       </div>
+    </div>
+    <div class="card">
+      <div class="card-title">
+        <a href="main.php"> Закрыть</a>
+    </div>
   </div>
 </body>
 </html>

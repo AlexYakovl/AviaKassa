@@ -16,7 +16,6 @@ session_start();?>
       padding: 0;
       margin: 0;
       background-color: #eaeaea;
-      overflow: hidden;
     }
 
     .card{
@@ -41,12 +40,16 @@ session_start();?>
       border-style: solid;
       border-width: 3px;
       border-color: rgb(16, 41, 92);
+      align-items: center;
+      justify-content: center;
     }
 
     .card-title{
       font-size: 18px;
       font-weight: bold;
       font-family: 'Comic Sans MS', cursive;
+      align-items: center;
+      justify-content: center;
       
     }
 
@@ -55,7 +58,7 @@ session_start();?>
       padding: 10px;
       background-image: url("pic/fon.jpg");
       background-repeat: no-repeat;
-      height: 1343px;
+      height: 1110px;
     }
 
     .texthold{
@@ -105,16 +108,6 @@ session_start();?>
   <title>Авиакасса "Five nights at freddy's" </title>
 </head>
 <body>
-<div class="topmid" >
-  <h1 class="toptext">Air ticket office << Five nights at freddy's >></h1>
-  <p class="toptext2" > The best ticket office, because others without Freddy</p>
-    <?php if (!isset($_SESSION['username'])): ?>
-        <a href="login.php" class="toptext3" > LOGIN </a>
-    <?php else: ?>
-        <a href="Profile.php" class="toptext3" > <?php echo $_SESSION['username']; ?> Личный кабинет</a>
-    <?php endif; ?>
-</div>
-<div class="container">
   <div class="texthold">
     <div class="card2">
       <div class="card-title">
@@ -139,14 +132,8 @@ session_start();?>
 
     <div class="card">
       <div class="card-title">
-        <a href="main.php"> Вернуться обратно</a>
+        <a href="main.php"> Закрыть</a>
     </div>
-
-
-
-
-
-  </div>
 </div>
 </body>
 </html>

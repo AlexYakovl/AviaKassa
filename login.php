@@ -85,6 +85,6 @@ unset($_SESSION['message']);
     <?php else: ?>
         <button ><a href="auth.php?logout=1">Выйти из учетной записи</a></button>
     <?php endif; ?>
-
+    <br><br>
+    <button> <a href="main.php">Вернуться на главную страницу</a> </button>
 </div>
-<button> <a href="main.php">Вернуться на главную страницу</a> </button>
